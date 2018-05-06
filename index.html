@@ -7,6 +7,8 @@
 
 <body>
 	<script type="text/javascript">
+		
+
 		function randomNumber () {
 			n = Math.floor(Math.random() * 3);
 			return n;
@@ -16,65 +18,380 @@
 		
 		function computerPlay () {
 		
+		
+
 		randomNumber ()
 
 			switch (n) {
 				case 0:
-					console.log("rock");
+					return("rock");
 					break;
 				case 1:
-					console.log("paper");
+					return("paper");
 					break;
 				case 2: 
-					console.log	("scissors");
+					return("scissors");
 					break;
 				default:
-					console.log("Hmmm...")
+					return("Hmmm...")
 
 			}
 		
 		}
 
-		function playRound(playerSelection, computerSelection) {
-			if (playerSelection == "rock" && computerSelection == "paper") {
-				console.log("Computer wins! Paper beats rock!");
-			} else if (playerSelection == "rock" && computerSelection == "scissors") {
-				console.log("You win! Rock beats scissors!")				
-			} else if (playerSelection == "paper" && computerSelection == "scissors") {
-				console.log("Computer wins! Scissors beats paper!")	
-			} else if (playerSelection == "paper" && computerSelection == "rock") {
-				console.log("You win! Paper beats rock!")		
-			} else if (playerSelection == "scissors" && computerSelection == "rock") {
-				console.log("Computer wins! Rock beats scissors!")		
-			} else if (playerSelection == "scissors" && computerSelection == "paper") {
-				console.log("You win! Scissors beats paper!")		
-			} else {
-				console.log("It's a tie!")
+		
+
+		
+
+
+
+		
+
+
+
+
+		function playRound() {
+		
+
+
+			switch (playerSelection) {
+				case "rock":
+					console.log("Player chooses rock");
+					break;
+				case "paper":
+					console.log("Player chooses paper");
+					break;
+				case "scissors":
+					console.log("Player chooses scissors");
+					break;
+				default:
+					console.log("Something went wrong...")
+	
 			}
+
+			switch (computerSelection) {
+				case "rock":
+					console.log("Computer chooses rock");
+					break;
+				case "paper":
+					console.log("Computer chooses paper");
+					break;
+				case "scissors":
+					console.log("Computer chooses scissors");
+					break;
+				default:
+					console.log("Something went wrong!");
+
+			}
+		
+			
+			if (playerSelection === "rock" && computerSelection == "paper") {
+					console.log("Computer wins! Paper beats rock!", ++ComputerKeepScore);
+				} else if (playerSelection === "rock" && computerSelection == "scissors") {
+					console.log("You win! Rock beats scissors!", ++PlayerKeepScore)					
+				} else if (playerSelection === "rock" && computerSelection =="rock") {
+					console.log("It's a tie!")
+				
+				} else if (playerSelection === "paper" && computerSelection == "scissors") {
+					console.log("Computer wins! Scissors beats paper!", ++ComputerKeepScore)
+				} else if (playerSelection === "paper" && computerSelection == "rock") {
+					console.log("You win! Rock beats scissors!", ++PlayerKeepScore)
+				} else if (playerSelection === "paper" && computerSelection == "paper") {
+					console.log("It's a tie!")
+
+				} else if (playerSelection === "scissors" && computerSelection == "rock") {
+					console.log("Computer wins! Rock beats scissors!", ++ComputerKeepScore)
+				} else if (playerSelection === "scissors" && computerSelection == "paper") {
+					console.log("You win! scissors beats paper!", ++PlayerKeepScore)
+				} else if (playerSelection === "scissors" && computerSelection == "scissors") {
+					console.log("It's a tie!")
+			}
+
+		}
+
+
+		function playRound2() {
+		
+
+
+			switch (playerSelection) {
+				case "rock":
+					console.log("Player chooses rock");
+					break;
+				case "paper":
+					console.log("Player chooses paper");
+					break;
+				case "scissors":
+					console.log("Player chooses scissors");
+					break;
+				default:
+					console.log("Something went wrong...")
+	
+			}
+
+			switch (computerSelection2) {
+				case "rock":
+					console.log("Computer chooses rock");
+					break;
+				case "paper":
+					console.log("Computer chooses paper");
+					break;
+				case "scissors":
+					console.log("Computer chooses scissors");
+					break;
+				default:
+					console.log("Something went wrong!");
+
+			}
+		
+			
+			if (playerSelection === "rock" && computerSelection2 == "paper") {
+					console.log("Computer wins! Paper beats rock!", ++ComputerKeepScore)
+				} else if (playerSelection === "rock" && computerSelection2 == "scissors") {
+					console.log("You win! Rock beats scissors!", ++PlayerKeepScore)					
+				} else if (playerSelection === "rock" && computerSelection2 =="rock") {
+					console.log("It's a tie!")
+				
+				} else if (playerSelection === "paper" && computerSelection2 == "scissors") {
+					console.log("Computer wins! Scissors beats paper!", ++ComputerKeepScore)
+				} else if (playerSelection === "paper" && computerSelection2 == "rock") {
+					console.log("You win! Paper beats rock!", ++PlayerKeepScore)
+				} else if (playerSelection === "paper" && computerSelection2 == "paper") {
+					console.log("It's a tie!")
+
+				} else if (playerSelection === "scissors" && computerSelection2 == "rock") {
+					console.log("Computer wins! Rock beats scissors!", ++ComputerKeepScore)
+				} else if (playerSelection === "scissors" && computerSelection2 == "paper") {
+					console.log("You win! scissors beats paper!", ++PlayerKeepScore)
+				} else if (playerSelection === "scissors" && computerSelection2 == "scissors") {
+					console.log("It's a tie!")
+			}
+
+
+
+
+
+
+		}
+		
+
+		//Add ++keepscore to playround3, 4 and 5. 
+
+		function playRound3() {
+			
+		
+
+
+			switch (playerSelection) {
+				case "rock":
+					console.log("Player chooses rock");
+					break;
+				case "paper":
+					console.log("Player chooses paper");
+					break;
+				case "scissors":
+					console.log("Player chooses scissors");
+					break;
+				default:
+					console.log("Something went wrong...")
+	
+			}
+
+			switch (computerSelection) {
+				case "rock":
+					console.log("Computer chooses rock");
+					break;
+				case "paper":
+					console.log("Computer chooses paper");
+					break;
+				case "scissors":
+					console.log("Computer chooses scissors");
+					break;
+				default:
+					console.log("Something went wrong!");
+
+			}
+		
+			
+			if (playerSelection === "rock" && computerSelection == "paper") {
+					console.log("Computer wins! Paper beats rock!");
+				} else if (playerSelection === "rock" && computerSelection == "scissors") {
+					console.log("You win! Rock beats scissors!")					
+				} else if (playerSelection === "rock" && computerSelection =="rock") {
+					console.log("It's a tie!")
+				
+				} else if (playerSelection === "paper" && computerSelection == "scissors") {
+					console.log("Computer win! Scissors beats paper!")
+				} else if (playerSelection === "paper" && computerSelection == "rock") {
+					console.log("You win! Rock beats scissors!")
+				} else if (playerSelection === "paper" && computerSelection == "paper") {
+					console.log("It's a tie!")
+
+				} else if (playerSelection === "scissors" && computerSelection == "rock") {
+					console.log("Computer win! Rock beats scissors!")
+				} else if (playerSelection === "scissors" && computerSelection == "paper") {
+					console.log("You win! scissors beats paper!")
+				} else if (playerSelection === "scissors" && computerSelection == "scissors") {
+					console.log("It's a tie!")
+			}
+		}
+
+		function playRound4() {
+			
+			switch (playerSelection) {
+				case "rock":
+					console.log("Player chooses rock");
+					break;
+				case "paper":
+					console.log("Player chooses paper");
+					break;
+				case "scissors":
+					console.log("Player chooses scissors");
+					break;
+				default:
+					console.log("Something went wrong...")
+	
+			}
+
+			switch (computerSelection) {
+				case "rock":
+					console.log("Computer chooses rock");
+					break;
+				case "paper":
+					console.log("Computer chooses paper");
+					break;
+				case "scissors":
+					console.log("Computer chooses scissors");
+					break;
+				default:
+					console.log("Something went wrong!");
+
+			}
+		
+			
+			if (playerSelection === "rock" && computerSelection == "paper") {
+					console.log("Computer wins! Paper beats rock!");
+				} else if (playerSelection === "rock" && computerSelection == "scissors") {
+					console.log("You win! Rock beats scissors!")					
+				} else if (playerSelection === "rock" && computerSelection =="rock") {
+					console.log("It's a tie!")
+				
+				} else if (playerSelection === "paper" && computerSelection == "scissors") {
+					console.log("Computer win! Scissors beats paper!")
+				} else if (playerSelection === "paper" && computerSelection == "rock") {
+					console.log("You win! Rock beats scissors!")
+				} else if (playerSelection === "paper" && computerSelection == "paper") {
+					console.log("It's a tie!")
+
+				} else if (playerSelection === "scissors" && computerSelection == "rock") {
+					console.log("Computer win! Rock beats scissors!")
+				} else if (playerSelection === "scissors" && computerSelection == "paper") {
+					console.log("You win! scissors beats paper!")
+				} else if (playerSelection === "scissors" && computerSelection == "scissors") {
+					console.log("It's a tie!")
+			}
+		}
+
+		function playRound5() {
+			
+			switch (playerSelection) {
+				case "rock":
+					console.log("Player chooses rock");
+					break;
+				case "paper":
+					console.log("Player chooses paper");
+					break;
+				case "scissors":
+					console.log("Player chooses scissors");
+					break;
+				default:
+					console.log("Something went wrong...")
+	
+			}
+
+			switch (computerSelection) {
+				case "rock":
+					console.log("Computer chooses rock");
+					break;
+				case "paper":
+					console.log("Computer chooses paper");
+					break;
+				case "scissors":
+					console.log("Computer chooses scissors");
+					break;
+				default:
+					console.log("Something went wrong!");
+
+			}
+		
+			
+			if (playerSelection === "rock" && computerSelection == "paper") {
+					console.log("Computer wins! Paper beats rock!");
+				} else if (playerSelection === "rock" && computerSelection == "scissors") {
+					console.log("You win! Rock beats scissors!")					
+				} else if (playerSelection === "rock" && computerSelection =="rock") {
+					console.log("It's a tie!")
+				
+				} else if (playerSelection === "paper" && computerSelection == "scissors") {
+					console.log("Computer win! Scissors beats paper!")
+				} else if (playerSelection === "paper" && computerSelection == "rock") {
+					console.log("You win! Rock beats scissors!")
+				} else if (playerSelection === "paper" && computerSelection == "paper") {
+					console.log("It's a tie!")
+
+				} else if (playerSelection === "scissors" && computerSelection == "rock") {
+					console.log("Computer win! Rock beats scissors!")
+				} else if (playerSelection === "scissors" && computerSelection == "paper") {
+					console.log("You win! scissors beats paper!")
+				} else if (playerSelection === "scissors" && computerSelection == "scissors") {
+					console.log("It's a tie!")
+			}
+		}
+
+
+		
+
+		function game() {
+			
+
+			playRound()
+			playRound2()
 
 
 		}
 
-		let playerSelection = "rock"
 
 
 
 
 
 
+		let PlayerKeepScore = 0;
+		let ComputerKeepScore = 0;
+		
+		const computerSelection = computerPlay()
+		const computerSelection2 = computerPlay()
+
+		let playerSelection = "rock".toLowerCase();
+		
+		game()
 
 
 		
 
-		
 
 
-		
 
 
 
 
 	</script>
+
+
+
+
+	
+
 
 
 
