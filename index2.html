@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="index2.css">
+	<title>Rock. Paper. Scissors.</title>
+</head>
+
+
+<body>
+
+
+	<img class="startImg" src="RPS.jpg">
+
+	<input class= "buttonR" type="image" src="rock.jpg">
+
+	<input class= "buttonP" type="image" src="paper.jpg">
+
+	<input class ="buttonS" type="image" src="scissors.jpg">
+
+
+	<div class="results">The first player to hit 5 wins!</div>
+		<span class="playerSel"></span><br>
+		<span class="computerSel"></span><br>
+		<span class="roundResults"></span><br>
+
+		<span class="playerScore"></span><br>
+		<span class="computerScore"></span><br>
+
+	<div class="endResult"></div>
+
+
+
+	
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		
+		let buttonR = document.querySelector(".buttonR")
+		buttonR.addEventListener("click", playRoundR);
+		buttonR.addEventListener("click", endResultFunc);
+
+		let buttonP = document.querySelector(".buttonP")
+		buttonP.addEventListener("click", playRoundP);
+		buttonP.addEventListener("click", endResultFunc);
+
+		let buttonS = document.querySelector(".buttonS")
+		buttonS.addEventListener("click", playRoundS);
+		buttonS.addEventListener("click", endResultFunc);
+
+
+		let playerSel = document.querySelector(".playerSel")
+		let computerSel = document.querySelector(".computerSel")
+		let roundRes = document.querySelector(".roundResults")
+
+		let playerScore = document.querySelector(".playerScore")
+		let compScore = document.querySelector(".computerScore")
+
+		let endResults = document.querySelector(".endResult")
+
+
+
+		function randomNumber () {
+			n = Math.floor(Math.random() * 3);
+			return n;
+			
+		}
+
+		
+		function computerPlay () {
+		
+		
+
+			randomNumber ()
+
+				switch (n) {
+					case 0:
+						return("rock");
+						break;
+					case 1:
+						return("paper");
+						break;
+					case 2: 
+						return("scissors");
+						break;
+					default:
+						return("Hmmm...")
+
+				}
+		
+		}
+
+
+		function playRoundR() {
+		
+			let playerSelection1 = "rock"
+			const computerSelection = computerPlay()
+
+
+				switch (playerSelection1) {
+					case "rock":
+						playerSel.textContent = "Player chooses rock"
+						break;
+					default:
+						console.log("Something went wrong...")
+	
+				}
+
+				switch (computerSelection) {
+					case "rock":
+						computerSel.textContent = "Computer chooses rock";
+						break;
+					case "paper":
+						computerSel.textContent = "Computer chooses paper";
+						break;
+					case "scissors":
+						computerSel.textContent = "Computer chooses scissors";
+						break;
+					default:
+						console.log("Something went wrong!");
+
+				}
+		
+			
+				if (playerSelection1 === "rock" && computerSelection == "paper") {
+					roundRes.textContent = "Computer wins! Paper beats rock!"
+					compScore.textContent = "computer: " + ++computerKeepScore 
+				} else if (playerSelection1 === "rock" && computerSelection == "scissors") {
+					roundRes.textContent = "You win! Rock beats scissors!"
+					playerScore.textContent = "player: " + ++playerKeepScore
+				} else if (playerSelection1 === "rock" && computerSelection =="rock") {
+					roundRes.textContent = "It's a tie!"
+				}
+		}
+
+
+		function playRoundP() {
+		
+			let playerSelection1 = "paper"
+			const computerSelection = computerPlay()
+
+
+				switch (playerSelection1) {
+					case "paper":
+						playerSel.textContent = "Player chooses paper";
+						break;
+					default:
+						console.log("Something went wrong...")
+	
+				}
+
+				switch (computerSelection) {
+					case "rock":
+						computerSel.textContent = "Computer chooses rock";
+						break;
+					case "paper":
+						computerSel.textContent ="Computer chooses paper";
+						break;
+					case "scissors":
+						computerSel.textContent = "Computer chooses scissors";
+						break;
+					default:
+						console.log("Something went wrong!");
+
+				}
+		
+			
+				if (playerSelection1 === "paper" && computerSelection == "scissors") {
+					roundRes.textContent = "Computer wins! Scissors beats paper!"
+					compScore.textContent = "computer: " + ++computerKeepScore
+				} else if (playerSelection1 === "paper" && computerSelection == "rock") {
+					roundRes.textContent = "You win! Rock beats scissors!"
+					playerScore.textContent = "player: " + ++playerKeepScore
+				} else if (playerSelection1 === "paper" && computerSelection == "paper") {
+					roundRes.textContent = "It's a tie!"
+				}
+
+		}
+
+		function playRoundS() {
+		
+			let playerSelection1 = "scissors"
+			const computerSelection = computerPlay()
+
+
+				switch (playerSelection1) {
+					case "scissors":
+						playerSel.textContent = "Player chooses scissors";
+						break;
+					default:
+						console.log("Something went wrong...")
+	
+				}
+
+				switch (computerSelection) {
+					case "rock":
+						computerSel.textContent = "Computer chooses rock";
+						break;
+					case "paper":
+						computerSel.textContent = "Computer chooses paper";
+						break;
+					case "scissors":
+						computerSel.textContent = "Computer chooses scissors";
+						break;
+					default:
+						console.log("Something went wrong!");
+
+				}
+		
+				if (playerSelection1 === "scissors" && computerSelection == "rock") {
+					roundRes.textContent = "Computer wins! Rock beats scissors!"
+					compScore.textContent = "computer: " + ++computerKeepScore
+				} else if (playerSelection1 === "scissors" && computerSelection == "paper") {
+					roundRes.textContent = "You win! scissors beats paper!" 
+					playerScore.textContent = "player: " + ++playerKeepScore
+				} else if (playerSelection1 === "scissors" && computerSelection == "scissors") {
+					roundRes.textContent = "It's a tie!"
+			}
+
+		}
+
+		let playerKeepScore = 0;
+		let computerKeepScore = 0;
+
+
+
+		function endResultFunc() {
+			if (playerKeepScore >= 5) {
+				endResults.textContent = "You win the whole game! Computer Loses!"
+				buttonR.removeEventListener("click", endResultFunc)
+				buttonP.removeEventListener("click", endResultFunc)
+				buttonS.removeEventListener("click", endResultFunc)
+			} else if (computerKeepScore >= 5) {
+				endResults.textContent = "You Lose! Computer wins the whole game!"
+				buttonR.removeEventListener("click", endResultFunc)
+				buttonP.removeEventListener("click", endResultFunc)
+				buttonS.removeEventListener("click", endResultFunc)
+			} 
+		}
+
+		
+
+
+
+		
+
+
+	</script>
+
+</body>
+</html>
